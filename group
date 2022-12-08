@@ -1,0 +1,14 @@
+import pandas as pd
+f = pd.read_csv('GoogleApps.csv')
+
+print(f.info())
+
+print(f['Category'].value_counts())
+
+print(f.groupby(by = 'Category')['Reviews'].sum())
+
+print(f.groupby(by = 'Category')['Reviews'].mean())
+
+print(f.groupby(by = 'Category')['Reviews'].agg(['min','max']))
+
+print(f.groupby(['Content Rating'])['Reviews'].sum())
